@@ -95,8 +95,8 @@ class S3Backend(BaseBackend):
                 if key_name.startswith(prefix):
                     if delimiter and '/' in key_name.lstrip(prefix):
                         # If delimiter, we need to split out folder_results
-                        key_without_prefix = "{}/".format(key_name.lstrip(prefix).split("/")[0])
-                        folder_results.add("{}{}".format(prefix, key_without_prefix))
+                        key_without_prefix = "{0}/".format(key_name.lstrip(prefix).split("/")[0])
+                        folder_results.add("{0}{1}".format(prefix, key_without_prefix))
                     else:
                         key_results.add(key)
         else:

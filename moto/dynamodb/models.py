@@ -1,4 +1,8 @@
-from collections import defaultdict, OrderedDict
+from collections import defaultdict
+try:
+	from collections import OrderedDict
+except ImportError:
+	from ordereddict import OrderedDict
 import datetime
 import json
 
@@ -36,7 +40,7 @@ class DynamoType(object):
         )
 
     def __repr__(self):
-        return "DynamoType: {}".format(self.to_json())
+        return "DynamoType: {0}".format(self.to_json())
 
     def to_json(self):
         return {self.type: self.value}
@@ -62,7 +66,7 @@ class Item(object):
             self.attrs[key] = DynamoType(value)
 
     def __repr__(self):
-        return "Item: {}".format(self.to_json())
+        return "Item: {0}".format(self.to_json())
 
     def to_json(self):
         attributes = {}

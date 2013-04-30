@@ -58,7 +58,7 @@ def get_random_hex(length=8):
 
 
 def get_random_message_id():
-    return '{}-{}-{}-{}-{}'.format(get_random_hex(8), get_random_hex(4), get_random_hex(4), get_random_hex(4), get_random_hex(12))
+    return '{0}-{1}-{2}-{3}-{4}'.format(get_random_hex(8), get_random_hex(4), get_random_hex(4), get_random_hex(4), get_random_hex(12))
 
 
 def convert_regex_to_flask_path(url_path):
@@ -88,7 +88,7 @@ class convert_flask_to_httpretty_response(object):
             outer = self.callback.im_class.__name__
         else:
             outer = self.callback.__module__
-        return "{}.{}".format(outer, self.callback.__name__)
+        return "{0}.{1}".format(outer, self.callback.__name__)
 
     def __call__(self, args=None, **kwargs):
         hostname = request.host_url

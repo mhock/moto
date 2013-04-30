@@ -81,4 +81,4 @@ class EC2Response(object):
                 response = sub_response(querystring)
                 method = getattr(response, action)
                 return method()
-        raise NotImplementedError("The {} action has not been implemented".format(action))
+        raise NotImplementedError("The {0} action has not been implemented".format(action))

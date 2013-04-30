@@ -23,7 +23,7 @@ class BaseResponse(object):
         if action in method_names:
             method = getattr(self, action)
             return method()
-        raise NotImplementedError("The {} action has not been implemented".format(action))
+        raise NotImplementedError("The {0} action has not been implemented".format(action))
 
 
 def metadata_response(uri, method, body, headers):

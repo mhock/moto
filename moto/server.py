@@ -23,7 +23,7 @@ class RegexConverter(BaseConverter):
 
 
 def configure_urls(service):
-    backend = globals()["{}_backend".format(service)]
+    backend = globals()["{0}_backend".format(service)]
     from werkzeug.routing import Map
     app.url_map = Map()
     app.url_map.converters['regex'] = RegexConverter
