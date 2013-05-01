@@ -1,6 +1,16 @@
 #!/usr/bin/env python
 
+import sys
 from setuptools import setup, find_packages
+
+requires=[
+    "boto",
+    "Jinja2",
+    "flask",
+]
+
+if sys.version_info[0] == 2 and sys.version_info[1] < 7:
+    requires.append("orderreddict")
 
 setup(
     name='moto',
@@ -16,9 +26,5 @@ setup(
         ],
     },
     packages=find_packages(),
-    install_requires=[
-        "boto",
-        "Jinja2",
-        "flask",
-    ],
+    install_requires=requires,
 )
